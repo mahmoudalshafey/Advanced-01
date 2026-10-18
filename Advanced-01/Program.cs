@@ -1,4 +1,5 @@
-﻿namespace Advanced_01
+﻿
+namespace Advanced_01
 {
     internal class Program
     {
@@ -54,7 +55,7 @@
         #endregion
 
         #region Ques 5
-       
+
         //public static T FindMax<T>(T a, T b) where T : IComparable<T>
         //{
         //    return a.CompareTo(b) > 0 ? a : b;
@@ -62,11 +63,26 @@
         #endregion
 
         #region Ques 6
+        // A generic interface allows contract definition for operations on strongly typed collections or services without specifying concrete types.
 
+        //public interface IRepository<T> where T : class
+        //{
+        //    T? GetById(int id);
+        //    IEnumerable<T> GetAll();
+        //    void Add(T entity);
+        //    void Update(T entity);
+        //    void Delete(int id);
+        //}
         #endregion
 
         #region Ques 7
+        // The struct constraint specifies that the type argument must be a non-nullable value type.
 
+        //public class StructWrapper<T> where T : struct
+        //{
+        //    public T Value { get; set; }
+        //    public T? AsNullable => Value;   
+        //}
         #endregion
 
         #region Ques 8
