@@ -86,19 +86,86 @@ namespace Advanced_01
         #endregion
 
         #region Ques 8
+        // The class constraint specifies that the type argument must be a reference type.
 
+        //public class ClassLogger<T> where T : class
+        //{
+        //    public void Log(T? item)
+        //    {
+        //        if (item == null)
+        //        {
+        //            Console.WriteLine("null");
+        //            return;
+        //        }
+        //        Console.WriteLine(item.ToString());
+        //    }
+        //}
         #endregion
 
         #region Ques 9
+        // The new() constraint requires the type argument to have a public parameterless constructor[cite: 1].
 
+        //public class Factory<T> where T : new()
+        //{
+        //    public T Create() => new T();
+        //}
+
+        //public class Car
+        //{
+        //    public string Model { get; set; } = "Default";
+        //}
         #endregion
 
         #region Ques 10
+        // Interface constraint: T must implement the interface
+
+        //public interface IPrintable
+        //{
+        //    void Print();
+        //}
+
+        //public class Printer<T> where T : IPrintable
+        //{
+        //    public void PrintAll(IEnumerable<T> items)
+        //    {
+        //        foreach (var item in items)
+        //            item.Print();   // safe, T is IPrintable
+        //    }
+        //}
+
+        //public class Invoice : IPrintable
+        //{
+        //    public void Print() => Console.WriteLine("Printing invoice...");
+        //}
 
         #endregion
 
         #region Ques 11
+        // Base class constraint: T must be, or derive from, the base class
 
+        //public abstract class Entity
+        //{
+        //    public int Id { get; set; }
+        //}
+
+        //public class Product : Entity, IComparable<Product>
+        //{
+        //    public string Name { get; set; } = "";
+        //    public decimal Price { get; set; }
+
+        //    public int CompareTo(Product? other) =>
+        //        other is null ? 1 : Price.CompareTo(other.Price);
+
+        //    public override string ToString() => $"{Name} ({Price})";
+        //}
+
+        //public class EntityStore<T> where T : Entity
+        //{
+        //    private readonly Dictionary<int, T> _items = new();
+
+        //    public void Save(T item) => _items[item.Id] = item;   
+        //    public T? Find(int id) => _items.GetValueOrDefault(id);
+        //}
         #endregion
 
         #region Ques 12
