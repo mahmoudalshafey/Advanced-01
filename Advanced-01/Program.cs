@@ -214,14 +214,48 @@ namespace Advanced_01
         #endregion
 
         #region Ques 15
+        // Covariance (out): T only in OUTPUT positions.
+        // A producer of Dogs can be used as a producer of Animals.
 
+        //public class Animal { public string Name { get; set; } = "Animal"; }
+        //public class Dog : Animal { public Dog() { Name = "Dog"; } }
+
+        //public interface IProducer<out T>
+        //{
+        //    T Produce();
+        //    
+        //}
+
+        //public class DogProducer : IProducer<Dog>
+        //{
+        //    public Dog Produce() => new Dog();
+        //}
         #endregion
 
         #region Ques 16
+        // Contravariance (in): T only in INPUT positions.
+        // A consumer of Animals can be used as a consumer of Dogs.y
 
+        //public interface IConsumer<in T>
+        //{
+        //    void Consume(T item);
+        //    // T Produce();      // error: T cannot be used as output here
+        //}
+
+        //public class AnimalConsumer : IConsumer<Animal>
+        //{
+        //    public void Consume(Animal a) => Console.WriteLine($"Consumed: {a.Name}");
+        //}
         #endregion
 
         #region Ques 17
+        // Difference
+        //   Covariance     (out): derived -> base, T is output only.
+        //                         IEnumerable<Dog> -> IEnumerable<Animal>
+        //   Contravariance (in):  base -> derived, T is input only.
+        //                         Action<Animal> -> Action<Dog>
+        //   Invariant: T used as both input and output (List<T>), no conversion.
+
 
         #endregion
 
