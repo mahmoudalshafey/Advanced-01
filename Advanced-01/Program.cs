@@ -260,14 +260,109 @@ namespace Advanced_01
         #endregion
 
         #region Ques 18
+        // Each closed generic type has its OWN static members
 
+        //public class Counter<T>
+        //{
+        //    public static int Count;
+        //    public Counter() => Count++;
+        //}
         #endregion
 
         #region Ques 19
+        // Inheriting from a generic class
 
+        //public class Base<T>
+        //{
+        //    public T Value { get; set; } = default!;
+        //}
+
+        //// 1. Closed: fix the type argument
+        //public class IntBase : Base<int> { }
+
+        //// 2. Open: pass the type parameter through
+        //public class Derived<T> : Base<T> { }
+
+        //// 3. Add extra parameters and constraints
+        //public class Derived2<T, U> : Base<T> where U : class
+        //{
+        //    public U Extra { get; set; } = default!;
+        //}
         #endregion
 
         #region Ques 20
+        //public class Cache<TKey, TValue> where TKey : notnull
+        //{
+        //    private sealed class Entry
+        //    {
+        //        public TValue Value { get; }
+        //        public DateTime? ExpiresAt { get; }
+
+        //        public Entry(TValue value, DateTime? expiresAt)
+        //        {
+        //            Value = value;
+        //            ExpiresAt = expiresAt;
+        //        }
+
+        //        public bool IsExpired => ExpiresAt.HasValue && DateTime.UtcNow >= ExpiresAt.Value;
+        //    }
+
+        //    private readonly Dictionary<TKey, Entry> _store = new();
+        //    private readonly object _lock = new();
+        //    private readonly TimeSpan? _defaultTtl;
+
+        //    public Cache(TimeSpan? defaultTtl = null) => _defaultTtl = defaultTtl;
+
+        //    public void Add(TKey key, TValue value, TimeSpan? ttl = null)
+        //    {
+        //        TimeSpan? life = ttl ?? _defaultTtl;
+        //        DateTime? expires = life.HasValue ? DateTime.UtcNow + life.Value : null;
+        //        lock (_lock)
+        //            _store[key] = new Entry(value, expires);
+        //    }
+
+        //    public bool TryGet(TKey key, out TValue? value)
+        //    {
+        //        lock (_lock)
+        //        {
+        //            if (_store.TryGetValue(key, out var entry))
+        //            {
+        //                if (!entry.IsExpired)
+        //                {
+        //                    value = entry.Value;
+        //                    return true;
+        //                }
+        //                _store.Remove(key);
+        //            }
+        //        }
+        //        value = default;
+        //        return false;
+        //    }
+
+        //    public TValue? Get(TKey key) => TryGet(key, out var v) ? v : default;
+
+        //    public bool Contains(TKey key) => TryGet(key, out _);
+
+        //    public bool Remove(TKey key)
+        //    {
+        //        lock (_lock)
+        //            return _store.Remove(key);
+        //    }
+
+        //    public int RemoveExpired()
+        //    {
+        //        lock (_lock)
+        //        {
+        //            var expired = _store.Where(kv => kv.Value.IsExpired)
+        //                                .Select(kv => kv.Key)
+        //                                .ToList();
+        //            foreach (var key in expired)
+        //                _store.Remove(key);
+        //            return expired.Count;
+        //        }
+        //    }
+        //}
+
 
         #endregion
     }
