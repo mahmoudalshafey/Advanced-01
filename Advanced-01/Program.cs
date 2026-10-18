@@ -169,15 +169,48 @@ namespace Advanced_01
         #endregion
 
         #region Ques 12
+        // Multiple constraints
+        // Order: class/struct, base class, interfaces, new() last.
+        // Each type parameter gets its own where clause.
 
+        //public class Repo<T> where T : Entity, IComparable<T>, new()
+        //{
+        //    public T CreateDefault() => new T();
+        //}
+
+        //public class Pairing<TKey, TValue>
+        //    where TKey : struct, IComparable<TKey>
+        //    where TValue : class, new()
+        //{
+        //    public TKey Key { get; set; }
+        //    public TValue Value { get; set; } = new TValue();
+        //}
         #endregion
 
         #region Ques 13
+        // default(T) gives 0 for numbers, false for bool, null for
+        // reference types, and a zeroed struct for custom structs.
 
+        //public static class DefaultDemo
+        //{
+        //   public static T? GetOrDefault<T>(List<T> list, int index) =>
+        //       index >= 0 && index < list.Count ? list[index] : default;
+        //}
         #endregion
 
         #region Ques 14
+        // SafeList<T> returns default when the index is invalid
 
+        //public class SafeList<T>
+        //{
+        //    private readonly List<T> _items = new();
+
+        //    public void Add(T item) => _items.Add(item);
+        //    public int Count => _items.Count;
+
+        //    public T? this[int index] =>
+        //        index >= 0 && index < _items.Count ? _items[index] : default;
+        //}
         #endregion
 
         #region Ques 15
