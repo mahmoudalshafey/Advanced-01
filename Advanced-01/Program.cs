@@ -27,7 +27,19 @@
         #endregion
 
         #region Ques 3
+        //public class Pair<TKey, TValue>
+        //{
+        //    public TKey Key { get; }
+        //    public TValue Value { get; }
 
+        //    public Pair(TKey key, TValue value)
+        //    {
+        //        Key = key;
+        //        Value = value;
+        //    }
+
+        //    public override string ToString() => $"({Key}, {Value})";
+        //}
         #endregion
 
         #region Ques 4
