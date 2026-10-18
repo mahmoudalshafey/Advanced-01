@@ -3,11 +3,13 @@
     internal class Program
     {
         #region Ques 1
-
+        // A generic class has type parameters(like T) that are replaced by
+        // real types when used. Benefits: compile-time type safety, no casting,
+        // no boxing of value types, and one implementation reused for any type.
         #endregion
 
         #region Ques 2
-
+        
         #endregion
 
         #region Ques 3
