@@ -43,11 +43,22 @@
         #endregion
 
         #region Ques 4
+        // A generic method is a method declared with type parameters, allowing it to work with arguments of any specified type.
 
+        //public static void Swap<T>(ref T a, ref T b)
+        //{
+        //    T temp = a;
+        //    a = b;
+        //    b = temp;
+        //}
         #endregion
 
         #region Ques 5
-
+       
+        //public static T FindMax<T>(T a, T b) where T : IComparable<T>
+        //{
+        //    return a.CompareTo(b) > 0 ? a : b;
+        //}
         #endregion
 
         #region Ques 6
